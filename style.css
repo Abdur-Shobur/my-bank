@@ -1,0 +1,6 @@
+.remove {
+  display: none;
+}
+#btn-deposit:hover .remove {
+  display: block !important;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>My Bank</title>
+  </head>
+  <body class="bg-slate-900">
+    <section class="mt-8">
+      <div class="container mx-auto">
+        <div class="md:w-3/4 mx-auto p-6">
+          <h1 class="text-center text-3xl text-white font-medium mb-4">
+            Your Bank info
+          </h1>
+
+          <!-- total balance  -->
+          <div class="flex justify-center flex-col md:flex-row flex-wrap gap-4">
+            <div
+              class="bg-blue-400 text-white p-4 rounded flex-1 min-w-[250px] bg-change"
+            >
+              <h1 class="text-2xl font-semibold">Deposit</h1>
+              <h1 class="text-xl">
+                <span>$</span>
+                <!-- diposite amount  -->
+                <span id="diposite-ammount">00</span>
+              </h1>
+            </div>
+            <div
+              class="bg-yellow-400 min-w-[250px] text-white p-4 rounded flex-1"
+            >
+              <h1 class="text-2xl font-semibold">Withdraw</h1>
+              <h1 class="text-xl">
+                <span>$</span>
+                <!-- Withdraw ammount  -->
+                <span id="withdraw-ammount">00</span>
+              </h1>
+            </div>
+            <div
+              class="bg-green-400 min-w-[250px] text-white p-4 rounded flex-1"
+            >
+              <h1 class="text-2xl font-semibold">Balance</h1>
+              <h1 class="text-xl">
+                <span>$</span>
+                <!-- current balance -->
+                <span id="current-blance">2200</span>
+              </h1>
+            </div>
+          </div>
+
+          <!-- add or Withdraw blance  -->
+          <div
+            class="flex justify-center gap-4 mt-10 lg:mt-20 flex-col md:flex-row"
+          >
+            <div class="bg-purple-400 text-white px-4 rounded flex-1 py-6">
+              <h1 class="text-2xl font-semibold mb-4">
+                Please Deposit [press Enter key]
+              </h1>
+              <input
+                id="diposit-fild"
+                class="border w-full text-slate-900 p-1 text-base border-stone-50 bg-stone-100 rounded focus:outline-none"
+                type="number"
+                placeholder="$ How mutch you want to Deposit"
+              />
+              <button
+                id="btn-deposit"
+                class="my-2 border-none py-1 px-4 bg-yellow-300 rounded-md text-sky-500 shadow font-medium relative"
+              >
+                Deposit
+                <p
+                  class="absolute text-red-600 mt-2 remove bg-slate-100 p-1 rounded top-0 w-40"
+                >
+                  ডিপোজিট Enter Key প্রেস করে করেন প্লিজ!
+                </p>
+              </button>
+            </div>
+            <div class="bg-red-400 text-white px-4 rounded flex-1 py-6">
+              <h1 class="text-2xl font-semibold mb-4">Please Withdraw</h1>
+              <input
+                id="withdraw-fild"
+                class="border w-full p-1 text-slate-900 text-base border-stone-50 bg-stone-100 rounded focus:outline-none"
+                type="number"
+                placeholder="$ How mutch you want to Withdraw"
+              />
+              <button
+                id="btn-withdraw"
+                class="my-2 border-none py-1 px-4 bg-blue-300 rounded-md text-white shadow font-medium"
+              >
+                Withdraw
+              </button>
+            </div>
+          </div>
+
+          <!-- bank Statemant  -->
+          <section>
+            <h1 class="text-3xl font-medium mt-8 mb-4 underline text-white">
+              Bank Statemant
+            </h1>
+            <section class="overflow-x-auto relative">
+              <table
+                class="table-auto border-separate border rounded p-4 w-full text-left min-w-[600px]"
+              >
+                <thead class="text-white">
+                  <tr>
+                    <th>No</th>
+                    <th>Deposit</th>
+                    <th>Withdraw</th>
+                    <th>Balance</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody class="text-slate-400 t-body">
+                  <tr class="">
+                    <td>01</td>
+                    <td>2200</td>
+                    <td>00</td>
+                    <td>2200</td>
+                    <td>02 hour ago</td>
+                  </tr>
+                </tbody>
+                <tfoot class="text-white">
+                  <tr class="font-medium">
+                    <td>No</td>
+                    <td>Total Doposit</td>
+                    <td>Total withdraw</td>
+                    <td>Total Blance</td>
+                    <td>Current time</td>
+                  </tr>
+                  <tr class="">
+                    <td class="count">00</td>
+                    <td class="total-diposit">00</td>
+                    <td class="total-withdrad">00</td>
+                    <td class="total-blance">2200</td>
+                    <td class="current-time"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </section>
+          </section>
+        </div>
+      </div>
+    </section>
+    <script src="./js/bank.js"></script>
+  </body>
+</html>
