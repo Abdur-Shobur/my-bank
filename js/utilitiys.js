@@ -1,8 +1,8 @@
-// secect dom Element
 let count = 1
+
+// secect dom Element
 const dipositFild = document.querySelector('#diposit-fild')
 const withdrawFild = document.querySelector('#withdraw-fild')
-
 const dipositButton = document.querySelector('#btn-deposit')
 const withdrawButton = document.querySelector('#btn-withdraw')
 const S_tBody = document.querySelector('.t-body')
@@ -18,10 +18,11 @@ const y = date.getFullYear()
 const mon = date.getMonth() + 1
 const dat = date.getDate()
 const h = date.getHours()
-console.log(s)
+
+// statement current time
 S_time.innerText = `${dat}/${mon}/${y}`
 
-// get input fild data
+// get input fild data {input fild}
 function getInput(input) {
   const inputEle = document.querySelector(input)
   const inputValue = parseFloat(inputEle.value)
@@ -29,55 +30,26 @@ function getInput(input) {
   return inputValue
 }
 
-// get dashbord data
+// get dashbord data {dashboard}
 function getdata(data) {
   const getdata = document.querySelector(data)
   getdataValue = parseFloat(getdata.innerText)
   return getdataValue
 }
 
-// set data
+// set data {set data}
 function setValue(set, value) {
   const seter = document.querySelector(set)
   seter.innerText = value
 }
 
-// create tr
+// create table tr
 function createTr(diposit = 0, withdrad = 0, Total, time) {
   const tr = document.createElement('tr')
   tr.innerHTML = `<td> ${count < 10 ? '0' + count : count}</td>
-    <td>${diposit}</td>
-                    <td>${withdrad}</td>
-                    <td>${Total}</td>
-                    <td>${time}</td>`
+  <td>${diposit}</td>
+  <td>${withdrad}</td>
+  <td>${Total}</td>
+  <td>${time}</td>`
   S_tBody.appendChild(tr)
-}
-
-function newDop(obj) {
-  const getWithdraw = getInput('#withdraw-fild')
-  obj['withdraw'] = getWithdraw
-  const getCurrentBlance = getdata('#current-blance')
-  if (getWithdraw < getCurrentBlance) {
-    const time = `${dat}/${mon}/${y} ${h}:${m}:${s}`
-
-    count++
-    // update count
-    setValue('.count', count)
-
-    // update withdraw dashboard
-    setValue('#withdraw-ammount', getWithdraw)
-
-    // update main blance
-    const afterwithdraw = getCurrentBlance - getWithdraw
-    setValue('#current-blance', afterwithdraw)
-
-    // update bank statement
-    const totalWithdraw = getdata('.total-withdrad')
-    setValue('.total-withdrad', getWithdraw + totalWithdraw)
-    setValue('.total-blance', afterwithdraw)
-
-    createTr('00', getWithdraw, afterwithdraw, time)
-  } else {
-    alert('not a valid info')
-  }
 }

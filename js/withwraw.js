@@ -1,16 +1,48 @@
 // withdraw Ammount
+function newDop() {
+  // get input fild
+  const getWithdraw = getInput('#withdraw-fild')
 
-const newObj = {}
+  //  get main blance
+  const getCurrentBlance = getdata('#current-blance')
+
+  // validation  {main balance is gatter than withdraw blance}
+  if (getWithdraw < getCurrentBlance) {
+    // update withdraw dashboard
+    setValue('#withdraw-ammount', getWithdraw)
+
+    // update main blance
+    const afterwithdraw = getCurrentBlance - getWithdraw
+    setValue('#current-blance', afterwithdraw)
+
+    // update count
+    count++
+    setValue('.count', count)
+
+    // update bank statement
+    const totalWithdraw = getdata('.total-withdrad')
+    setValue('.total-withdrad', getWithdraw + totalWithdraw)
+    setValue('.total-blance', afterwithdraw)
+
+    // update time
+    const time = `${dat}/${mon}/${y} ${h}:${m}:${s}`
+
+    // update table row tr
+    createTr('00', getWithdraw, afterwithdraw, time)
+  } else {
+    alert('not a valid info')
+  }
+}
+
+// by click functon
 withdrawButton.addEventListener('click', () => {
-  // get withdraw by input
-  newDop(newObj)
-  console.log(newObj)
+  newDop()
 })
 
+// by enter press
 withdrawFild.addEventListener('keyup', (e) => {
   // enter keyCode == 13
   if (e.keyCode === 13) {
-    // get withdraw by input
-    newDop(newObj)
+    newDop()
   }
 })

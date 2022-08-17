@@ -12,21 +12,3 @@ submit.addEventListener('click', () => {
       ? (window.location.href = './bank.html')
       : alert('Wrong password!')
 })
-
-/*
-if (e.keyCode === 13) {
-        console.log(e)
-        e.target.addEventListener('keypress', (e) => {
-          e.bgChange.style.backgroundColor = '#3b82f680'
-          
-        })
-        e.target.addEventListener('keyup', changeColor2)
-
-        function changeColor2() {
-        }
-        function changeColor() {
-          bgChange.style.backgroundColor = 'red'
-        }
-      }
-
-      */
