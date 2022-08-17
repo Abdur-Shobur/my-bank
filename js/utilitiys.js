@@ -52,3 +52,32 @@ function createTr(diposit = 0, withdrad = 0, Total, time) {
                     <td>${time}</td>`
   S_tBody.appendChild(tr)
 }
+
+function newDop(obj) {
+  const getWithdraw = getInput('#withdraw-fild')
+  obj['withdraw'] = getWithdraw
+  const getCurrentBlance = getdata('#current-blance')
+  if (getWithdraw < getCurrentBlance) {
+    const time = `${dat}/${mon}/${y} ${h}:${m}:${s}`
+
+    count++
+    // update count
+    setValue('.count', count)
+
+    // update withdraw dashboard
+    setValue('#withdraw-ammount', getWithdraw)
+
+    // update main blance
+    const afterwithdraw = getCurrentBlance - getWithdraw
+    setValue('#current-blance', afterwithdraw)
+
+    // update bank statement
+    const totalWithdraw = getdata('.total-withdrad')
+    setValue('.total-withdrad', getWithdraw + totalWithdraw)
+    setValue('.total-blance', afterwithdraw)
+
+    createTr('00', getWithdraw, afterwithdraw, time)
+  } else {
+    alert('not a valid info')
+  }
+}
