@@ -26,9 +26,6 @@ const mon = date.getMonth() + 1
 const dat = date.getDate()
 
 S_time.innerText = `${dat}/${mon}/${y}`
-function mybgFun() {
-  console.log('afhj')
-}
 
 // diposite ammount
 // access by Enter key
