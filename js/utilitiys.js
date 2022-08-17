@@ -9,16 +9,22 @@ const S_tBody = document.querySelector('.t-body')
 const S_time = document.querySelector('.current-time')
 const S_count = document.querySelector('.count')
 
-// date formate
 const date = new Date()
-const d = date.getDay() + 1
-const s = date.getSeconds()
-const m = date.getMinutes()
-const y = date.getFullYear()
-const mon = date.getMonth() + 1
 const dat = date.getDate()
-const h = date.getHours()
-
+const mon = date.getMonth() + 1
+const y = date.getFullYear()
+// date formate
+function getDate() {
+  const date = new Date()
+  const d = date.getDay() + 1
+  const s = date.getSeconds()
+  const m = date.getMinutes()
+  const y = date.getFullYear()
+  const mon = date.getMonth() + 1
+  const dat = date.getDate()
+  const h = date.getHours()
+  return `${dat}/${mon}/${y} ${h}:${m}:${s}`
+}
 // statement current time
 S_time.innerText = `${dat}/${mon}/${y}`
 

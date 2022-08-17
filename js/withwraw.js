@@ -17,7 +17,7 @@ function newDop() {
 
     // update count
     count++
-    setValue('.count', count)
+    setValue('.count', count < 10 ? '0' + count : count)
 
     // update bank statement
     const totalWithdraw = getdata('.total-withdrad')
@@ -25,7 +25,7 @@ function newDop() {
     setValue('.total-blance', afterwithdraw)
 
     // update time
-    const time = `${dat}/${mon}/${y} ${h}:${m}:${s}`
+    const time = getDate()
 
     // update table row tr
     createTr('00', getWithdraw, afterwithdraw, time)

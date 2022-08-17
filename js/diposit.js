@@ -21,13 +21,13 @@ function diposit() {
 
     // update count
     count++
-    setValue('.count', count)
+    setValue('.count', count < 10 ? '0' + count : count)
 
     // update bank statement
     setValue('.total-diposit', totalCurrentBlance)
     setValue('.total-blance', totalCurrentBlance)
 
-    const time = `${dat}/${mon}/${y} ${h}:${m}:${s}`
+    const time = getDate()
     createTr(newDipositFildValue, '00', totalCurrentBlance, time)
   } else {
     alert('Not a valid info')
