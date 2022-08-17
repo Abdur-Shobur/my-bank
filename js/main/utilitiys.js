@@ -1,8 +1,25 @@
 // secect dom Element
-const dipositAmmount = document.querySelector('#diposite-ammount')
-const withdrawAmmount = document.querySelector('#withdraw-ammount')
-const curentBlance = document.querySelector('#current-blance')
-const dipositFild = document.querySelector('#diposit-fild')
+
 const dipositButton = document.querySelector('#btn-deposit')
 const withdrawButton = document.querySelector('#btn-withdraw')
-const bgChange = document.querySelector('.bg-change')
+
+// get input fild data
+function getInput(input) {
+  const inputEle = document.querySelector(input)
+  const inputValue = parseFloat(inputEle.value)
+  inputEle.value = ''
+  return inputValue
+}
+
+// get dashbord data
+function getdata(data) {
+  const getdata = document.querySelector(data)
+  getdataValue = parseFloat(getdata.innerText)
+  return getdataValue
+}
+
+// set data
+function setValue(set, value) {
+  const seter = document.querySelector(set)
+  seter.innerText = value
+}
