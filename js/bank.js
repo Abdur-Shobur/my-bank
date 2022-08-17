@@ -36,8 +36,7 @@ dipositFild.addEventListener('keyup', (e) => {
   // enter keyCode == 13
   if (e.keyCode === 13) {
     //   counting
-
-    e.preventDefault()
+    // e.preventDefault()
     let dipositFild = parseFloat(e.target.value)
     if (dipositFild >= 0) {
       count++
@@ -57,7 +56,7 @@ dipositFild.addEventListener('keyup', (e) => {
 
       //   update diposit bank statmant
       const tr = document.createElement('tr')
-      tr.innerHTML = `<td>${count}</td>
+      tr.innerHTML = `<td> ${count < 10 ? '0' + count : count}</td>
     <td>${dipositFild}</td>
                     <td>00</td>
                     <td>${addBlanceMainAccount}</td>
