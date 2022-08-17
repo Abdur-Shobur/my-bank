@@ -1,9 +1,10 @@
 function gitInput(input) {
-  const inputEle = document.getElementById(input)
+  const inputEle = document.querySelector(input)
   const inputValue = parseFloat(inputEle.value)
+  inputEle.value = ''
   return inputValue
 }
-gitInput('btn-deposit')
+
 dipositButton.addEventListener('click', () => {
-  console.log(dipositFild.value)
+  gitInput('#diposit-fild')
 })
